@@ -17,7 +17,7 @@ namespace Assets.Scripts.Managers
         [Header("")]
         public int score;
         [SerializeField]
-        private int scoreIncreaseRate = 1;
+        private float scoreIncreaseRate = 1;
 
         // Private vars
         private int _speedScore;
@@ -45,7 +45,7 @@ namespace Assets.Scripts.Managers
         {
             if (GameHandler.Instance.GameState != GameState.Started) return;
 
-            _speedScore = Mathf.RoundToInt(_playerMovement.movementSpeed / 2);
+            _speedScore = Mathf.RoundToInt(_playerMovement.movementSpeed / 3);
 
             _scoreTimer += Time.deltaTime * _playerMovement.movementSpeed / 10;
 
